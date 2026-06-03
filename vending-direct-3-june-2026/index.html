@@ -134,10 +134,10 @@ svg{display:block}
 .proof .stats .st .n{font-size:clamp(19px,5.6vw,26px);font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1;white-space:nowrap}
 .proof .stats .st .l{font-size:10px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#ff8cc6;margin-top:7px;line-height:1.3}
 .proof .arc{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
-.proof .step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:15px 16px}
-.proof .step .badge{width:24px;height:24px;border-radius:7px;background:var(--brand);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-.proof .step .t{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#ff8cc6}
-.proof .step .d{font-size:13px;color:#e4dfee;margin-top:4px;line-height:1.45}
+.proof .step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:15px 16px;display:grid;grid-template-columns:auto 1fr;grid-template-areas:"badge title" "desc desc";column-gap:10px;align-items:center}
+.proof .step .badge{grid-area:badge;width:24px;height:24px;border-radius:7px;background:var(--brand);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.proof .step .t{grid-area:title;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#ff8cc6}
+.proof .step .d{grid-area:desc;font-size:13px;color:#e4dfee;margin-top:9px;line-height:1.45}
 .proof .quote{position:relative;z-index:2;font-size:19px;font-weight:700;color:#fff;border-left:3px solid var(--brand);padding-left:18px;line-height:1.45}
 .proof .quote span{display:block;font-size:12.5px;font-weight:500;color:#b9b2c6;margin-top:9px;letter-spacing:.3px}
 
