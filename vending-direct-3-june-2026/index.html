@@ -236,11 +236,11 @@ svg{display:block}
   .cta{padding:34px 20px}
   .offer .row{flex-wrap:wrap}
 }
-/* Sticky mobile CTA: floats up once you scroll past the hero, hides when the real CTA is in view. Mobile only. */
-.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:9000;display:none;align-items:center;justify-content:center;gap:9px;margin:0 12px calc(12px + env(safe-area-inset-bottom));padding:16px 22px;border-radius:14px;background:linear-gradient(135deg,#ff2f9e,var(--brand) 45%,var(--brand-2));color:#fff;font-weight:800;font-size:15.5px;letter-spacing:.2px;text-decoration:none;box-shadow:0 12px 34px rgba(230,0,126,.5);transform:translateY(160%);transition:transform .38s cubic-bezier(.4,0,.2,1)}
-.sticky-cta svg{width:18px;height:18px;flex-shrink:0}
-.sticky-cta.show{transform:translateY(0)}
-@media(max-width:720px){.sticky-cta{display:flex}}
+/* Sticky mobile CTA bar: a white bar pinned to the bottom; the button inside reuses the .btn style (gradient + gloss + sheen + pulse). Slides up once you scroll past the hero, hides at the real CTA. Mobile only. */
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:9000;display:none;justify-content:center;padding:11px 16px calc(11px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 26px rgba(40,8,40,.14);transform:translateY(150%);transition:transform .38s cubic-bezier(.4,0,.2,1)}
+.sticky-bar .btn{width:100%;max-width:460px;padding:15px 24px}
+.sticky-bar.show{transform:translateY(0)}
+@media(max-width:720px){.sticky-bar{display:flex}}
 </style>
 </head>
 <body>
@@ -454,11 +454,11 @@ svg{display:block}
 
 </div>
 
-<!-- Sticky mobile CTA (mobile only; mirrors the bottom button) -->
-<a class="sticky-cta" id="stickyCta" href="https://cal.com/david-king-fo5ifk/15min" target="_blank" rel="noopener"><span>Book your free 15 min fit check</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<!-- Sticky mobile CTA bar (mobile only; button reuses the CTA .btn style) -->
+<div class="sticky-bar" id="stickyBar"><a class="btn" href="https://cal.com/david-king-fo5ifk/15min" target="_blank" rel="noopener"><span>Book your free 15 min fit check</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
 <script>
 (function(){
-  var bar=document.getElementById('stickyCta'), cta=document.querySelector('.cta'), hero=document.querySelector('.hero');
+  var bar=document.getElementById('stickyBar'), cta=document.querySelector('.cta'), hero=document.querySelector('.hero');
   if(!bar||!cta||!('IntersectionObserver' in window)) return;
   var ctaVisible=false, pastHero=!hero;
   function update(){ bar.classList.toggle('show', pastHero && !ctaVisible); }
