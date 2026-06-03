@@ -73,6 +73,7 @@ svg{display:block}
 .hc-num .lbl{font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .hc-num .big{font-size:clamp(26px,8vw,50px);font-weight:900;color:var(--brand);letter-spacing:-1.5px;line-height:1.02;margin:13px 0 8px;white-space:nowrap}
 .hc-num .big .cur{font-size:.5em;vertical-align:super;font-weight:800;letter-spacing:0}
+.hc-num .big .rdash{margin:0 .14em;letter-spacing:0}
 .hc-num .sub{font-size:13px;color:var(--muted);max-width:340px}
 .hc-verify{display:flex;flex-direction:column;gap:11px;padding-top:4px}
 .hc-verify .v{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink);max-width:300px}
@@ -148,7 +149,9 @@ svg{display:block}
 .offer .how li{display:flex;gap:11px;font-size:14.5px;color:var(--ink);line-height:1.5}
 .offer .how li svg{width:19px;height:19px;color:var(--brand);flex-shrink:0;margin-top:1px}
 .offer .how li b{font-weight:800}
-.offer .guar{background:#fff;border:1px solid #f3b8d8;border-radius:14px;padding:16px 18px;font-size:14.5px;color:var(--ink);line-height:1.55;margin-bottom:22px}
+.offer .guar{display:flex;gap:13px;align-items:flex-start;background:#fff;border:1px solid #f3b8d8;border-radius:14px;padding:16px 18px;font-size:14.5px;color:var(--ink);line-height:1.55;margin-bottom:22px}
+.offer .guar .shield{width:38px;height:38px;border-radius:10px;background:var(--brand-soft);display:flex;align-items:center;justify-content:center;color:var(--brand);flex-shrink:0}
+.offer .guar .shield svg{width:22px;height:22px}
 .offer .guar b{color:var(--brand-2);font-weight:800}
 .offer .stack-lbl{font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .offer .stack{display:grid;gap:0}
@@ -221,8 +224,10 @@ svg{display:block}
   .proof{padding:28px 20px}
   .proof .arc{grid-template-columns:1fr}
   .proof .stats{gap:7px}
-  .leak{grid-template-columns:auto 1fr;grid-template-areas:"ic title" "desc desc" "amt amt";column-gap:14px;row-gap:10px;align-items:start;padding:20px 18px}
-  .leak h3{align-self:center;margin-bottom:0}
+  .prepared{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .prepared .chip{font-size:11.5px;padding:8px 11px}
+  .leak{grid-template-columns:1fr;grid-template-areas:"ic" "title" "desc" "est";row-gap:11px;align-items:start;padding:22px 20px}
+  .leak h3{margin-bottom:0}
   .leak .est{justify-self:end;text-align:right}
   .leak p{max-width:none}
   .cta{padding:34px 20px}
@@ -271,7 +276,7 @@ svg{display:block}
     <div class="hc-top">
       <div class="hc-num">
         <div class="lbl">Estimated monthly profit leak</div>
-        <div class="big"><span class="cur">NZ$</span>9,000&ndash;15,000</div>
+        <div class="big"><span class="cur">NZ$</span>9,000<span class="rdash">&ndash;</span>15,000</div>
         <div class="sub">Modelled from sector benchmarks. The exact figure is confirmed live on a free deep dive.</div>
       </div>
       <div class="hc-verify">
@@ -377,7 +382,7 @@ svg{display:block}
       <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><polyline points="20 6 9 17 4 12"/></svg> Case study &middot; Flow Autobody</div>
       <p class="story">A client of ours, <b>Flow Autobody</b>, came to us going into administration. They had been loss making for <b>18 months</b> and were carrying tax debt. Our fractional CFO found the same kind of leaks we have flagged above, and turned it around fast.</p>
       <div class="stats">
-        <div class="st"><div class="n">18 mo</div><div class="l">loss-making before</div></div>
+        <div class="st"><div class="n">18 mo</div><div class="l">straight losses</div></div>
         <div class="st"><div class="n">6 wks</div><div class="l">back to profit</div></div>
         <div class="st"><div class="n">10x</div><div class="l">ROI on the CFO</div></div>
       </div>
@@ -400,7 +405,7 @@ svg{display:block}
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>A senior fractional CFO digs in</b> and pinpoints exactly where your profit is leaking, line by line.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>You walk away with the number</b> and a clear plan to put that money back in your pocket.</span></li>
       </ul>
-      <div class="guar"><b>Our guarantee:</b> we will find at least <b>NZ$11,500 a month</b> in profit to put back in your pocket. If we cannot, you get a custom 90 day profitability plan, normally NZ$2,500, completely free.</div>
+      <div class="guar"><span class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span><span><b>Our guarantee:</b> we will find at least <b>NZ$11,500 a month</b> in profit to put back in your pocket. If we cannot, you get a custom 90 day profitability plan, normally NZ$2,500, completely free.</span></div>
       <div class="stack-lbl">What you get, free</div>
       <div class="stack">
         <div class="row"><span class="d">Profit deep dive with a senior fractional CFO</span><span class="v">NZ$1,500</span><span class="free">FREE</span></div>
