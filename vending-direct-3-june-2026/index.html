@@ -463,8 +463,8 @@ svg{display:block}
     var _ddOpenKey = 'dd_op_' + location.pathname + '_' + new Date().toDateString();
     var _ddSeen = false; try{ _ddSeen = !!localStorage.getItem(_ddOpenKey); if(!_ddSeen) localStorage.setItem(_ddOpenKey,'1'); }catch(e){}
     if(!_ddSeen){
-      new Image().src = "https://docs.dopaminedigital.io/track?event=opened&slug=profit-leak-scan&title="
-        + encodeURIComponent(LEAD) + "&t=" + Date.now();
+      new Image().src = "https://docs.dopaminedigital.io/track?event=opened&slug="
+        + encodeURIComponent("CFO report - " + LEAD) + "&title=" + encodeURIComponent(LEAD) + "&t=" + Date.now();
     }
   }catch(e){}
 })();
