@@ -463,8 +463,9 @@ svg{display:block}
     var _ddOpenKey = 'dd_op_' + location.pathname + '_' + new Date().toDateString();
     var _ddSeen = false; try{ _ddSeen = !!localStorage.getItem(_ddOpenKey); if(!_ddSeen) localStorage.setItem(_ddOpenKey,'1'); }catch(e){}
     if(!_ddSeen){
+      var SLUG = "cfo-report-" + LEAD.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
       new Image().src = "https://docs.dopaminedigital.io/track?event=opened&slug="
-        + encodeURIComponent("CFO report - " + LEAD) + "&title=" + encodeURIComponent(LEAD) + "&t=" + Date.now();
+        + encodeURIComponent(SLUG) + "&title=" + encodeURIComponent(LEAD) + "&t=" + Date.now();
     }
   }catch(e){}
 })();
