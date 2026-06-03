@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<title>AI Profit Leak Scan | The CFO Centre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#e6007e;          /* CFO Centre magenta */
+  --brand-2:#c4006a;
+  --brand-deep:#9c0054;
+  --brand-soft:#fdeaf3;
+  --ink:#221f2b;
+  --char:#211e2c;
+  --muted:#6c6a7a;
+  --line:#ece9f0;
+  --bg:#f6f4f8;
+  --card:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+svg{display:block}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none}}
+
+/* ===== Top bar ===== */
+.topbar{background:#fff;padding:14px 0;border-bottom:1px solid var(--line)}
+.topbar .row{max-width:900px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo-tile{background:var(--brand);border-radius:11px;padding:7px 8px 6px;display:flex;flex-direction:column;align-items:center;width:56px;flex-shrink:0}
+.logo-tile .box{background:#fff;border-radius:3px;padding:3px 7px 2px;display:flex;flex-direction:column;align-items:flex-start;line-height:.8;width:100%}
+.logo-tile .l-the{color:var(--brand);font-size:9px;font-weight:800;letter-spacing:-.2px}
+.logo-tile .l-cfo{color:var(--brand);font-size:21px;font-weight:900;letter-spacing:-1.5px;line-height:.8;margin-top:1px}
+.logo-tile .l-centre{color:#fff;font-size:11px;font-weight:700;letter-spacing:.5px;margin-top:3px}
+.brand .rdiv{width:1px;height:26px;background:var(--line)}
+.brand .region{font-size:11px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--brand)}
+.ai-pill{display:inline-flex;align-items:center;gap:8px;background:var(--brand-soft);border:1px solid #f6c4de;color:var(--brand-2);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:7px 14px;border-radius:30px;white-space:nowrap;flex-shrink:0}
+.ai-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--brand)}
+
+/* ===== Hero ===== */
+.hero{background:
+   radial-gradient(circle at 88% 6%,rgba(255,255,255,.18),transparent 42%),
+   linear-gradient(150deg,#e6007e 0%,#bb0064 72%,#9c0054 100%);
+  color:#fff;padding:50px 0 128px;position:relative;overflow:hidden}
+.hero .grid-tex{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.22) 1px,transparent 1px);background-size:26px 26px;opacity:.14;pointer-events:none}
+.hero .row{max-width:900px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
+.kicker{font-size:11.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#ffd0e8}
+.hero h1{font-size:clamp(28px,7vw,40px);font-weight:900;letter-spacing:-1.2px;line-height:1.05;margin:13px 0 14px;display:inline-block}
+.hero h1 .ul{box-shadow:inset 0 -10px 0 rgba(255,255,255,.18)}
+.hero .sub{font-size:16px;color:#fbe2ef;max-width:640px;line-height:1.6}
+.prepared{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.prepared .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:9px;padding:8px 13px;font-size:12.5px;color:#fff}
+.prepared .chip b{color:#fff;font-weight:700}
+
+/* ===== Headline card ===== */
+.headline-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 60px rgba(156,0,84,.13);padding:30px 34px;margin-top:-92px;position:relative;z-index:3}
+.hc-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.hc-num{min-width:0}
+.hc-num .lbl{font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.hc-num .big{font-size:clamp(26px,8vw,50px);font-weight:900;color:var(--brand);letter-spacing:-1.5px;line-height:1.02;margin:13px 0 8px;white-space:nowrap}
+.hc-num .big .cur{font-size:.5em;vertical-align:super;font-weight:800;letter-spacing:0}
+.hc-num .big .rdash{margin:0 .14em;letter-spacing:0}
+.hc-num .sub{font-size:13px;color:var(--muted);max-width:340px}
+.hc-verify{display:flex;flex-direction:column;gap:11px;padding-top:4px}
+.hc-verify .v{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink);max-width:300px}
+.hc-verify .v svg{width:18px;height:18px;color:var(--brand);flex-shrink:0;margin-top:1px}
+
+/* breakdown bar */
+.breakdown{margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+.breakdown .bd-lbl{font-size:11px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);margin-bottom:11px}
+.bar{display:flex;height:15px;border-radius:8px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(156,0,84,.06);transform:scaleX(0);transform-origin:left;animation:grow 1s cubic-bezier(.4,0,.2,1) .25s forwards}
+@keyframes grow{to{transform:scaleX(1)}}
+.bar span{height:100%}
+.bar span:not(:last-child){border-right:2px solid #fff}
+.seg1{background:#9c0054}.seg2{background:#c4006a}.seg3{background:#e6007e}.seg4{background:#f25aa8}.seg5{background:#f9a8d0}
+.legend{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:16px}
+.legend .lg{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.legend .sw{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+.legend .pct{font-weight:800;color:var(--ink);margin-left:4px}
+
+/* ===== Section ===== */
+.section{margin-top:50px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:7px}
+.section-head h2{font-size:clamp(20px,5vw,23px);font-weight:800;color:var(--ink);letter-spacing:-.5px}
+.section-head .num{font-size:12.5px;font-weight:700;color:var(--brand-2);background:var(--brand-soft);padding:4px 11px;border-radius:20px;white-space:nowrap}
+.section-intro{font-size:14.5px;color:var(--muted);max-width:690px;margin-bottom:24px}
+
+/* snapshot */
+.snapshot{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 28px;box-shadow:0 8px 26px rgba(156,0,84,.05)}
+.snapshot .scan-note{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;color:var(--brand-2);font-weight:700;margin-bottom:18px;line-height:1.5}
+.snapshot .scan-note svg{width:16px;height:16px;flex-shrink:0;margin-top:2px}
+.snapshot ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 30px}
+.snapshot li{font-size:14px;color:var(--ink);padding-left:22px;position:relative;line-height:1.5}
+.snapshot li svg{position:absolute;left:0;top:4px;width:14px;height:14px;color:var(--brand)}
+.snapshot li b{color:var(--ink);font-weight:700}
+
+/* leak cards */
+.leaks{display:grid;gap:15px}
+.leak{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 26px 22px 23px;display:grid;grid-template-columns:52px 1fr auto;grid-template-areas:"ic title est" "ic desc est";column-gap:19px;row-gap:3px;align-items:center;position:relative;overflow:hidden;box-shadow:0 6px 20px rgba(156,0,84,.05);transition:box-shadow .22s,transform .22s,border-color .22s}
+.leak .ic{grid-area:ic}.leak h3{grid-area:title}.leak p{grid-area:desc}.leak .est{grid-area:est}
+.leak::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--brand),var(--brand-2));transform:scaleY(0);transform-origin:top;transition:transform .25s}
+.leak:hover{box-shadow:0 16px 38px rgba(156,0,84,.12);transform:translateY(-3px);border-color:#f6cfe2}
+.leak:hover::before{transform:scaleY(1)}
+.leak .ic{width:52px;height:52px;border-radius:13px;background:var(--brand-soft);display:flex;align-items:center;justify-content:center;color:var(--brand)}
+.leak .ic svg{width:25px;height:25px}
+.leak h3{font-size:16.5px;font-weight:800;color:var(--ink);margin-bottom:5px;letter-spacing:-.2px}
+.leak p{font-size:13.5px;color:var(--muted);line-height:1.55;max-width:470px}
+.leak .est{display:flex;align-items:center;gap:9px;flex-wrap:wrap;flex-shrink:0}
+.leak .est .amt{font-size:18px;font-weight:900;color:var(--ink);letter-spacing:-.5px;white-space:nowrap}
+.leak .est .lab{font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--brand-2);background:var(--brand-soft);padding:3px 9px;border-radius:20px;white-space:nowrap}
+
+/* proof / case study */
+.proof{background:radial-gradient(circle at 90% 110%,rgba(230,0,126,.34),transparent 48%),linear-gradient(155deg,#2a2636,#1a1822);color:#fff;border-radius:18px;padding:36px 38px;position:relative;overflow:hidden}
+.proof .grid-tex{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:24px 24px;opacity:.07}
+.proof .tag{position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#ff8cc6;background:rgba(230,0,126,.16);border:1px solid rgba(255,140,198,.3);padding:5px 12px;border-radius:30px}
+.proof .story{position:relative;z-index:2;font-size:16.5px;line-height:1.6;color:#ece8f2;margin:16px 0 0;max-width:670px}
+.proof .story b{color:#fff}
+.proof .stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 22px}
+.proof .stats .st{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:14px 10px;text-align:center}
+.proof .stats .st .n{font-size:clamp(19px,5.6vw,26px);font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1;white-space:nowrap}
+.proof .stats .st .l{font-size:10px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#ff8cc6;margin-top:7px;line-height:1.3}
+.proof .arc{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.proof .step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:15px 16px;display:grid;grid-template-columns:auto 1fr;grid-template-areas:"badge title" "desc desc";column-gap:10px;align-items:center}
+.proof .step .badge{grid-area:badge;width:24px;height:24px;border-radius:7px;background:var(--brand);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.proof .step .t{grid-area:title;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#ff8cc6}
+.proof .step .d{grid-area:desc;font-size:13px;color:#e4dfee;margin-top:9px;line-height:1.45}
+.proof .quote{position:relative;z-index:2;font-size:19px;font-weight:700;color:#fff;border-left:3px solid var(--brand);padding-left:18px;line-height:1.45}
+.proof .quote span{display:block;font-size:12.5px;font-weight:500;color:#b9b2c6;margin-top:9px;letter-spacing:.3px}
+
+/* offer stack */
+.offer{margin-top:22px;background:linear-gradient(165deg,#ffffff,var(--brand-soft));border:1.5px solid #f3b8d8;border-radius:20px;padding:clamp(24px,5vw,34px);box-shadow:0 18px 44px rgba(230,0,126,.13)}
+.offer .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-2));padding:5px 12px;border-radius:30px}
+.offer h3{font-size:clamp(21px,5.2vw,28px);font-weight:900;color:var(--ink);letter-spacing:-.6px;margin:14px 0 16px;line-height:1.15}
+.offer .how{list-style:none;display:grid;gap:12px;margin-bottom:20px}
+.offer .how li{display:flex;gap:11px;font-size:14.5px;color:var(--ink);line-height:1.5}
+.offer .how li svg{width:19px;height:19px;color:var(--brand);flex-shrink:0;margin-top:1px}
+.offer .how li b{font-weight:800}
+.offer .guar{background:#fff;border:1px solid #f3b8d8;border-radius:14px;padding:20px 22px;margin-bottom:22px;display:grid;grid-template-columns:52px 1fr;grid-template-areas:"ic title" "ic body";column-gap:18px;row-gap:7px;align-items:start}
+.offer .guar .shield{grid-area:ic;width:52px;height:52px;border-radius:13px;background:var(--brand-soft);display:flex;align-items:center;justify-content:center;color:var(--brand)}
+.offer .guar .shield svg{width:25px;height:25px}
+.offer .guar h3{grid-area:title;margin:0;font-size:17.5px;font-weight:800;color:var(--ink);letter-spacing:-.2px;line-height:1.3}
+.offer .guar p{grid-area:body;margin:0;font-size:14px;color:var(--muted);line-height:1.55}
+.offer .guar b{color:var(--brand-2);font-weight:800}
+.offer .stack-lbl{font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.offer .stack{display:grid;gap:0}
+.offer .row{display:flex;align-items:baseline;justify-content:space-between;gap:10px;font-size:14px;color:var(--ink);padding:11px 0;border-bottom:1px dashed #f0cfe0}
+.offer .row .d{flex:1;min-width:0}
+.offer .row .v{text-decoration:line-through;color:var(--muted);font-size:12.5px;white-space:nowrap}
+.offer .row .free{color:var(--brand);font-weight:900;font-size:12.5px;letter-spacing:.5px;white-space:nowrap}
+.offer .total{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;font-weight:900;color:var(--ink);font-size:15px}
+.offer .total .r{display:flex;gap:9px;align-items:baseline}
+.offer .total .v{text-decoration:line-through;color:var(--muted);font-size:14px}
+.offer .total .free{color:var(--brand);font-size:16px;letter-spacing:.3px}
+
+/* CTA */
+.cta{text-align:center;margin-top:30px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:44px 30px;box-shadow:0 10px 30px rgba(156,0,84,.06)}
+.cta .who{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:18px}
+.cta .who .av{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(230,0,126,.28);position:relative;overflow:hidden}
+.cta .who .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cta .who .wt{text-align:left;font-size:12.5px;color:var(--muted);line-height:1.3}
+.cta .who .wt b{display:block;color:var(--ink);font-size:14px;font-weight:800}
+.cta h2{font-size:clamp(20px,3.6vw,25px);font-weight:900;color:var(--ink);letter-spacing:-.5px;line-height:1.2;margin:0 auto 12px;max-width:600px;text-wrap:balance}
+.cta p{font-size:15px;color:var(--muted);max-width:560px;margin:0 auto 22px;text-wrap:balance}
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(135deg,#ff2f9e,var(--brand) 45%,var(--brand-2));color:#fff;font-weight:800;font-size:15.5px;letter-spacing:.2px;line-height:1.3;text-align:center;white-space:normal;padding:16px 32px;border-radius:13px;text-decoration:none;box-shadow:0 12px 30px rgba(230,0,126,.36);transition:transform .15s,box-shadow .15s;max-width:460px;animation:btnpulse 2.8s ease-in-out infinite}
+.btn>*{position:relative;z-index:2}
+.btn::before{content:"";position:absolute;inset:0;border-radius:13px;background:linear-gradient(180deg,rgba(255,255,255,.32),rgba(255,255,255,0) 52%);z-index:1;pointer-events:none}
+.btn::after{content:"";position:absolute;top:-20%;left:-70%;width:45%;height:140%;z-index:1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:sheen 3.4s ease-in-out infinite;pointer-events:none}
+@keyframes sheen{0%,58%{left:-70%}100%{left:150%}}
+@keyframes btnpulse{0%,100%{box-shadow:0 12px 30px rgba(230,0,126,.36)}50%{box-shadow:0 16px 44px rgba(230,0,126,.6)}}
+.btn:hover{transform:translateY(-2px) scale(1.015);box-shadow:0 20px 46px rgba(230,0,126,.5)}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+@media(prefers-reduced-motion:reduce){.btn,.btn::after{animation:none}}
+.cta .li-connect{display:inline-flex;align-items:center;gap:5px;justify-content:center;color:var(--brand-2);font-size:12px;font-weight:700;text-decoration:none;margin:4px 0 2px}
+.cta .li-connect:hover{text-decoration:underline}
+.cta .li-connect svg{width:14px;height:14px}
+.cta .risk{font-size:13px;color:var(--muted);font-weight:600;margin:0 0 20px}
+.cta .stars-row{display:flex;align-items:center;justify-content:center;gap:11px;margin-top:28px;flex-wrap:wrap}
+.cta .stars-row .stars{font-size:17px;letter-spacing:2px;color:#f5b50a;line-height:1}
+.cta .stars-row .stars-label{font-size:12px;color:var(--muted);font-weight:600}
+.cta .footnote{font-size:11px;font-style:italic;color:#9a98a8;margin-top:8px}
+.cta .proofbox{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px;border-top:1px solid var(--line);padding-top:22px}
+.cta .proofbox .pb b{display:block;font-size:clamp(17px,4.5vw,21px);font-weight:900;color:var(--brand);letter-spacing:-.5px;line-height:1}
+.cta .proofbox .pb span{display:block;font-size:10.5px;color:var(--muted);font-weight:600;margin-top:5px;line-height:1.3}
+
+/* footer */
+.foot{text-align:center;margin-top:42px;font-size:11.5px;color:#9a98a8;line-height:1.7;max-width:700px;margin-left:auto;margin-right:auto}
+.foot .logo-sm{font-weight:800;color:var(--brand);font-size:13px;letter-spacing:.3px}
+
+/* trust / social proof */
+.trust{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;box-shadow:0 8px 26px rgba(156,0,84,.05)}
+.trust .trust-tag{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;color:var(--brand-2);letter-spacing:.2px;margin-bottom:16px;line-height:1.4}
+.trust .trust-tag svg{width:16px;height:16px;color:var(--brand);flex-shrink:0}
+.trust-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.trust-stats .ts{text-align:center;padding:6px 4px;border-right:1px solid var(--line)}
+.trust-stats .ts:last-child{border-right:none}
+.trust-stats .n{font-size:clamp(19px,5vw,24px);font-weight:900;color:var(--brand);letter-spacing:-1px;line-height:1}
+.trust-stats .l{font-size:11px;color:var(--muted);margin-top:6px;font-weight:600}
+
+@media(max-width:600px){.trust-stats{grid-template-columns:1fr 1fr;gap:16px 10px}.trust-stats .ts:nth-child(2){border-right:none}.cta .proofbox{grid-template-columns:1fr 1fr;gap:18px 10px}}
+@media(max-width:720px){
+  .wrap{padding:0 16px 70px}
+  .ai-pill{font-size:10px;letter-spacing:.6px;padding:6px 11px}
+  .hc-top{gap:18px}
+  .hc-verify{padding-top:0}
+  .headline-card{padding:24px 20px}
+  .hero{padding:42px 0 120px}
+  .snapshot{padding:22px 18px}
+  .snapshot ul{grid-template-columns:1fr}
+  .legend{flex-direction:column;gap:11px}
+  .legend .lg{width:100%}
+  .legend .pct{margin-left:auto}
+  .proof{padding:28px 20px}
+  .proof .arc{grid-template-columns:1fr}
+  .proof .stats{gap:7px}
+  .prepared{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .prepared .chip{font-size:11.5px;padding:8px 11px}
+  .leak{grid-template-columns:auto 1fr;grid-template-areas:"ic title" "desc desc" "est est";column-gap:14px;row-gap:11px;align-items:center;padding:22px 20px}
+  .leak h3{margin-bottom:0;line-height:1.3}
+  .offer .guar{grid-template-columns:auto 1fr;grid-template-areas:"ic title" "body body";column-gap:14px;align-items:center}
+  .leak .est{justify-self:end;text-align:right}
+  .leak p{max-width:none}
+  .cta{padding:34px 20px}
+  .offer .row{flex-wrap:wrap}
+}
+/* Sticky mobile CTA bar */
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:9000;display:none;justify-content:center;padding:11px 16px calc(11px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 26px rgba(40,8,40,.14);transform:translateY(150%);transition:transform .38s cubic-bezier(.4,0,.2,1)}
+.sticky-bar .btn{width:100%;max-width:460px;padding:15px 24px;animation:none;box-shadow:0 5px 15px rgba(230,0,126,.3)}
+.sticky-bar.show{transform:translateY(0)}
+@media(max-width:720px){.sticky-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<header class="topbar">
+  <div class="row">
+    <div class="brand">
+      <div class="logo-tile">
+        <div class="box"><span class="l-the">the</span><span class="l-cfo">cfo</span></div>
+        <span class="l-centre">centre</span>
+      </div>
+      <span class="rdiv"></span>
+      <span class="region">New Zealand</span>
+    </div>
+    <div class="ai-pill"><span class="dot"></span> AI Profit Leak Scan</div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="grid-tex"></div>
+  <div class="row">
+    <div class="kicker">Prepared for</div>
+    <h1><span class="ul">Anagenix</span></h1>
+    <p class="sub">Our AI scanned 40+ public signals about your business and benchmarked them against NZ nutraceutical and ingredient companies in your turnover band. Here is where firms like yours quietly lose margin before it reaches the bottom line.</p>
+    <div class="prepared">
+      <div class="chip">Sector: <b>Nutraceutical ingredients (B2B)</b></div>
+      <div class="chip">Est. turnover: <b>$5M to $10M</b></div>
+      <div class="chip">Region: <b>Auckland</b></div>
+      <div class="chip">Scan date: <b>3 June 2026</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- Headline card -->
+  <div class="headline-card">
+    <div class="hc-top">
+      <div class="hc-num">
+        <div class="lbl">Estimated monthly profit leak</div>
+        <div class="big"><span class="cur">NZ$</span>8,000<span class="rdash">&ndash;</span>13,500</div>
+        <div class="sub">Modelled from sector benchmarks. The exact figure is confirmed live on a free deep dive.</div>
+      </div>
+      <div class="hc-verify">
+        <div class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Built from public data, no access to your books required</div>
+        <div class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Benchmarked against NZ firms in your turnover band</div>
+        <div class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Verified line by line on the deep dive, or you owe nothing</div>
+      </div>
+    </div>
+    <div class="breakdown">
+      <div class="bd-lbl">Where the leak sits</div>
+      <div class="bar">
+        <span class="seg1" style="width:31%"></span>
+        <span class="seg2" style="width:26%"></span>
+        <span class="seg3" style="width:19%"></span>
+        <span class="seg4" style="width:15%"></span>
+        <span class="seg5" style="width:9%"></span>
+      </div>
+      <div class="legend">
+        <div class="lg"><span class="sw seg1"></span> R&amp;D and IP spend vs commercial return <span class="pct">31%</span></div>
+        <div class="lg"><span class="sw seg2"></span> Multi-market distribution margin <span class="pct">26%</span></div>
+        <div class="lg"><span class="sw seg3"></span> Compliance and certification overhead <span class="pct">19%</span></div>
+        <div class="lg"><span class="sw seg4"></span> Currency exposure and FX drag <span class="pct">15%</span></div>
+        <div class="lg"><span class="sw seg5"></span> Single-site manufacturing risk <span class="pct">9%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust / social proof -->
+  <div class="trust">
+    <div class="trust-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> Backed by The CFO Centre, the world's number one fractional CFO provider</div>
+    <div class="trust-stats">
+      <div class="ts"><div class="n">750+</div><div class="l">CFOs worldwide</div></div>
+      <div class="ts"><div class="n">1,320</div><div class="l">active clients</div></div>
+      <div class="ts"><div class="n">18</div><div class="l">countries</div></div>
+      <div class="ts"><div class="n">Since 2001</div><div class="l">top 1% of CFOs</div></div>
+    </div>
+  </div>
+
+  <!-- Snapshot -->
+  <div class="section">
+    <div class="section-head"><h2>What we found about you</h2></div>
+    <div class="snapshot">
+      <div class="scan-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> AI-read from your website, LinkedIn, job and hiring boards, the NZ Companies Office, recent news and industry sources, and other public data</div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>Clinically validated ingredient portfolio</b> with 18 granted patents, 5+ ongoing clinical studies, and partnerships across 6 universities</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>Distributing across 6+ international markets</b> from a single manufacturing facility in Avondale, Auckland</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>Significant US ownership</b> with multi-currency revenue streams across NZD, USD, AUD, EUR, and Asian currencies</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>EcoVadis Platinum (top 1%)</b> plus B Corp commitment, Living Wage accreditation, and annual GHG audits</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>Recently hired a COO</b> to lead global manufacturing, signalling a scaling phase</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>B2B ingredient model</b> selling to larger manufacturers and brands, where pricing power sits with the buyer</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Leak map -->
+  <div class="section">
+    <div class="section-head"><h2>Your likely profit leaks</h2><span class="num">5 areas</span></div>
+    <p class="section-intro">Each area below is where nutraceutical and ingredient companies your size most often lose money. Figures are benchmark estimates for your turnover band, confirmed against your actual numbers on the deep dive.</p>
+    <div class="leaks">
+
+      <div class="leak">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <h3>R&amp;D and IP spend vs commercial return</h3>
+        <p>Five ongoing clinical studies, 18 patents across 6 countries, and 6 university partnerships is heavy spend for a sub-$10M company. Without tracking ROI per study and per patent family, some of that investment quietly earns nothing back.</p>
+        <div class="est"><div class="amt">NZ$2,500&ndash;4,000</div><div class="lab">Est / mo</div></div>
+      </div>
+
+      <div class="leak">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Multi-market distribution margin</h3>
+        <p>Serving USA, Canada, Australia, Asia, China, and Europe from one NZ plant means logistics, regulatory compliance per market, and distributor margins all compress your gross margin on every sale. At sub-$10M revenue the per-market contribution is thin.</p>
+        <div class="est"><div class="amt">NZ$2,000&ndash;3,500</div><div class="lab">Est / mo</div></div>
+      </div>
+
+      <div class="leak">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Compliance and certification overhead</h3>
+        <p>EcoVadis Platinum, B Corp, Living Wage, GHG inventories, sustainability reports, and patent renewals in 6 countries each make sense on their own. Together they form a cumulative cost that quietly erodes margin for a 20 person company.</p>
+        <div class="est"><div class="amt">NZ$1,500&ndash;2,500</div><div class="lab">Est / mo</div></div>
+      </div>
+
+      <div class="leak">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Currency exposure and FX drag</h3>
+        <p>With approximately 70% US ownership, revenue in multiple currencies, and NZD manufacturing costs, unhedged FX movements can swing monthly margin by thousands. Transfer pricing between NZ and US entities adds another layer of complexity.</p>
+        <div class="est"><div class="amt">NZ$1,200&ndash;2,000</div><div class="lab">Est / mo</div></div>
+      </div>
+
+      <div class="leak">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+        <h3>Single-site manufacturing concentration</h3>
+        <p>All production runs through one facility in Avondale. Any disruption, whether equipment, supply chain, or weather, stops revenue entirely. The hidden cost is not just insurance but the contingency planning gap and the downtime risk sitting unpriced on the books.</p>
+        <div class="est"><div class="amt">NZ$800&ndash;1,500</div><div class="lab">Est / mo</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Proof / case study -->
+  <div class="section">
+    <div class="proof">
+      <div class="grid-tex"></div>
+      <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><polyline points="20 6 9 17 4 12"/></svg> Case study &middot; Flow Autobody</div>
+      <p class="story">A client of ours, <b>Flow Autobody</b>, came to us going into administration. They had been loss making for <b>18 months</b> and were carrying tax debt. Our fractional CFO found the same kind of leaks we have flagged above, and turned it around fast.</p>
+      <div class="stats">
+        <div class="st"><div class="n">18 mo</div><div class="l">of losses</div></div>
+        <div class="st"><div class="n">6 wks</div><div class="l">back to profit</div></div>
+        <div class="st"><div class="n">10x</div><div class="l">ROI on the CFO</div></div>
+      </div>
+      <div class="arc">
+        <div class="step"><div class="badge">1</div><div class="t">Week 2</div><div class="d">Found margins too low on certain jobs, and overhead needed to shift to a contractor model</div></div>
+        <div class="step"><div class="badge">2</div><div class="t">Week 6</div><div class="d">Business was turning a profit for the first time in over a year</div></div>
+        <div class="step"><div class="badge">3</div><div class="t">6 months</div><div class="d">Owner sold the business internally at a price every party was happy with</div></div>
+      </div>
+      <div class="quote">&ldquo;Twelve months later, the ROI on having a CFO was 10 times what he had invested.&rdquo;<span>Owner, Flow Autobody</span></div>
+    </div>
+  </div>
+
+  <!-- Offer stack -->
+  <div class="section">
+    <div class="offer">
+      <span class="eyebrow">Limited time &middot; for New Zealand businesses</span>
+      <h3>Your free custom CFO Centre Profit Deep Dive</h3>
+      <ul class="how">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>15 minutes to start.</b> A quick fit call with David, then we book your full deep dive.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>A senior fractional CFO digs in</b> and pinpoints exactly where your profit is leaking, line by line.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>You walk away with the number</b> and a clear plan to put that money back in your pocket.</span></li>
+      </ul>
+      <div class="guar"><span class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span><h3>Our $11,500 NZD/month profit guarantee</h3><p>We will find at least <b>NZ$11,500 a month</b> in profit to put back in your pocket. If we cannot, you get a custom 90 day profitability plan, normally <b>NZ$2,500</b>, completely free.</p></div>
+      <div class="stack-lbl">What you get, free</div>
+      <div class="stack">
+        <div class="row"><span class="d">Profit deep dive with a senior fractional CFO</span><span class="v">NZ$1,500</span><span class="free">FREE</span></div>
+        <div class="row"><span class="d">Written profit-leak findings report for your business</span><span class="v">NZ$900</span><span class="free">FREE</span></div>
+        <div class="row"><span class="d">Custom 90 day profitability plan if we miss the guarantee</span><span class="v">NZ$2,500</span><span class="free">FREE</span></div>
+      </div>
+      <div class="total"><span>Total value</span><span class="r"><span class="v">NZ$4,900</span><span class="free">yours free</span></span></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="who">
+      <div class="av"><img src="../assets/david-king.png" alt="David King"></div>
+      <div class="wt"><b>David King</b>CEO, The CFO Centre NZ</div>
+    </div>
+    <a class="li-connect" href="https://www.linkedin.com/in/davidcharlesking/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.96H5.56v8.38h2.78zM6.95 8.73a1.61 1.61 0 1 0 0-3.22 1.61 1.61 0 0 0 0 3.22zm11.39 9.61v-4.59c0-2.45-1.31-3.59-3.06-3.59-1.41 0-2.04.78-2.39 1.32v-1.13H9.9v8.38h2.78v-4.65c0-.25.02-.49.09-.67.2-.49.65-1 1.4-1 .99 0 1.39.75 1.39 1.85v4.47h2.78z"/></svg> Connect with me on LinkedIn</a>
+    <h2>Book a 15-minute fit check to see if a deep dive makes sense for Anagenix</h2>
+    <p>On the call David will run through the report with you, customize it specifically for your business, and see whether a deep dive is the right fit.</p>
+    <div class="risk">A completely free quick fit check with David, no pressure either way.</div>
+    <a class="btn" href="https://cal.com/david-king-fo5ifk/15min?duration=15" target="_blank" rel="noopener"><span>Book your free 15 min fit check</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <div class="stars-row"><span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="stars-label">Trusted by 1,320 active clients worldwide</span></div>
+    <div class="footnote">No obligation. If it is not a fit, you will know in 15 minutes.</div>
+    <div class="proofbox">
+      <div class="pb"><b>750+</b><span>CFOs worldwide</span></div>
+      <div class="pb"><b>1,320</b><span>active clients</span></div>
+      <div class="pb"><b>18</b><span>countries</span></div>
+      <div class="pb"><b>#1</b><span>fractional CFO provider</span></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="foot">
+    <div class="logo-sm">The CFO Centre New Zealand</div>
+    The world's number one fractional CFO provider.<br>
+    This scan is an AI assisted analysis based on publicly available data and sector benchmarks. All figures are estimates and are confirmed on the deep dive. Prepared for the named recipient only.
+  </div>
+
+</div>
+
+<!-- Sticky mobile CTA bar (mobile only; button reuses the CTA .btn style) -->
+<div class="sticky-bar" id="stickyBar"><a class="btn" href="https://cal.com/david-king-fo5ifk/15min?duration=15" target="_blank" rel="noopener"><span>Book your free 15 min fit check</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+<script>
+(function(){
+  var bar=document.getElementById('stickyBar'), cta=document.querySelector('.cta'), hero=document.querySelector('.hero');
+  if(!bar||!cta||!('IntersectionObserver' in window)) return;
+  var ctaVisible=false, pastHero=!hero;
+  function update(){ bar.classList.toggle('show', pastHero && !ctaVisible); }
+  new IntersectionObserver(function(es){es.forEach(function(e){ctaVisible=e.isIntersecting;});update();},{threshold:0,rootMargin:'0px 0px -10% 0px'}).observe(cta);
+  if(hero) new IntersectionObserver(function(es){es.forEach(function(e){pastHero=!e.isIntersecting;});update();},{threshold:0}).observe(hero);
+})();
+</script>
+<script>
+(function(){
+  var sel='.headline-card,.trust,.section-head,.snapshot,.leak,.proof,.offer,.cta';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(el){el.classList.add('reveal')});
+  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+
+<!-- Open-tracking beacon -->
+<script>
+(function(){
+  var LEAD = "Anagenix";
+  try{
+    var _ddOpenKey = 'dd_op_' + location.pathname + '_' + new Date().toDateString();
+    var _ddSeen = false; try{ _ddSeen = !!localStorage.getItem(_ddOpenKey); if(!_ddSeen) localStorage.setItem(_ddOpenKey,'1'); }catch(e){}
+    if(!_ddSeen){
+      var SLUG = "cfo-report-" + LEAD.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+      new Image().src = "https://docs.dopaminedigital.io/track?event=opened&slug="
+        + encodeURIComponent(SLUG) + "&title=" + encodeURIComponent(LEAD) + "&t=" + Date.now();
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
