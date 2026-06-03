@@ -235,7 +235,12 @@ svg{display:block}
   .leak p{max-width:none}
   .cta{padding:34px 20px}
   .offer .row{flex-wrap:wrap}
+  .sticky-cta{display:flex}
 }
+/* Sticky mobile CTA: floats up once you scroll past the hero, hides when the real CTA is in view. Mobile only. */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:9000;display:none;align-items:center;justify-content:center;gap:9px;margin:0 12px calc(12px + env(safe-area-inset-bottom));padding:16px 22px;border-radius:14px;background:linear-gradient(135deg,#ff2f9e,var(--brand) 45%,var(--brand-2));color:#fff;font-weight:800;font-size:15.5px;letter-spacing:.2px;text-decoration:none;box-shadow:0 12px 34px rgba(230,0,126,.5);transform:translateY(160%);transition:transform .38s cubic-bezier(.4,0,.2,1)}
+.sticky-cta svg{width:18px;height:18px;flex-shrink:0}
+.sticky-cta.show{transform:translateY(0)}
 </style>
 </head>
 <body>
@@ -449,6 +454,18 @@ svg{display:block}
 
 </div>
 
+<!-- Sticky mobile CTA (mobile only; mirrors the bottom button) -->
+<a class="sticky-cta" id="stickyCta" href="https://cal.com/david-king-fo5ifk/15min" target="_blank" rel="noopener"><span>Book your free 15 min fit check</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<script>
+(function(){
+  var bar=document.getElementById('stickyCta'), cta=document.querySelector('.cta'), hero=document.querySelector('.hero');
+  if(!bar||!cta||!('IntersectionObserver' in window)) return;
+  var ctaVisible=false, pastHero=!hero;
+  function update(){ bar.classList.toggle('show', pastHero && !ctaVisible); }
+  new IntersectionObserver(function(es){es.forEach(function(e){ctaVisible=e.isIntersecting;});update();},{threshold:0,rootMargin:'0px 0px -10% 0px'}).observe(cta);
+  if(hero) new IntersectionObserver(function(es){es.forEach(function(e){pastHero=!e.isIntersecting;});update();},{threshold:0}).observe(hero);
+})();
+</script>
 <script>
 (function(){
   var sel='.headline-card,.trust,.section-head,.snapshot,.leak,.proof,.offer,.cta';
