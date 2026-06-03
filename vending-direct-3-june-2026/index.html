@@ -238,7 +238,7 @@ svg{display:block}
 }
 /* Sticky mobile CTA bar: a white bar pinned to the bottom; the button inside reuses the .btn style (gradient + gloss + sheen + pulse). Slides up once you scroll past the hero, hides at the real CTA. Mobile only. */
 .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:9000;display:none;justify-content:center;padding:11px 16px calc(11px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 26px rgba(40,8,40,.14);transform:translateY(150%);transition:transform .38s cubic-bezier(.4,0,.2,1)}
-.sticky-bar .btn{width:100%;max-width:460px;padding:15px 24px}
+.sticky-bar .btn{width:100%;max-width:460px;padding:15px 24px;animation:none;box-shadow:0 5px 15px rgba(230,0,126,.3)}
 .sticky-bar.show{transform:translateY(0)}
 @media(max-width:720px){.sticky-bar{display:flex}}
 </style>
