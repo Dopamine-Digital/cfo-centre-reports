@@ -145,7 +145,7 @@ svg{display:block}
 .offer .how li{display:flex;gap:11px;font-size:14.5px;color:var(--ink);line-height:1.5}
 .offer .how li svg{width:19px;height:19px;color:var(--brand);flex-shrink:0;margin-top:1px}
 .offer .how li b{font-weight:800}
-.offer .guar{background:#fff;border:1px solid #f3b8d8;border-radius:14px;padding:20px 22px;margin-bottom:22px;display:grid;grid-template-columns:52px 1fr;grid-template-areas:"ic title" "ic body";column-gap:18px;row-gap:7px;align-items:start}
+.offer .guar{background:#fff;border:1px solid #f3b8d8;border-radius:14px;padding:20px 22px;margin-bottom:22px;display:grid;grid-template-columns:52px 1fr;grid-template-areas:"ic title" "ic body" "note note";column-gap:18px;row-gap:7px;align-items:start}
 .offer .guar .shield{grid-area:ic;width:52px;height:52px;border-radius:13px;background:var(--brand-soft);display:flex;align-items:center;justify-content:center;color:var(--brand)}
 .offer .guar .shield svg{width:25px;height:25px}
 .offer .guar h3{grid-area:title;margin:0;font-size:17.5px;font-weight:800;color:var(--ink);letter-spacing:-.2px;line-height:1.3}
@@ -226,7 +226,7 @@ svg{display:block}
   .prepared .chip{font-size:11.5px;padding:8px 11px}
   .leak{grid-template-columns:auto 1fr;grid-template-areas:"ic title" "desc desc" "est est";column-gap:14px;row-gap:11px;align-items:center;padding:22px 20px}
   .leak h3{margin-bottom:0;line-height:1.3}
-  .offer .guar{grid-template-columns:auto 1fr;grid-template-areas:"ic title" "body body";column-gap:14px;align-items:center}
+  .offer .guar{grid-template-columns:auto 1fr;grid-template-areas:"ic title" "body body" "note note";column-gap:14px;align-items:center}
   .leak .est{justify-self:end;text-align:right}
   .leak p{max-width:none}
   .cta{padding:34px 20px}
@@ -407,7 +407,7 @@ svg{display:block}
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>A senior fractional CFO digs in</b> and pinpoints exactly where your profit is leaking, line by line.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>You walk away with the number</b> and a clear plan to put that money back in your pocket.</span></li>
       </ul>
-      <div class="guar"><span class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span><h3>Our $11,500 NZD/month profit guarantee<sup style="font-size:.55em;color:var(--brand-2);font-weight:700">*</sup></h3><p>We will find at least <b>NZ$11,500 a month</b> in profit to put back in your pocket. If we cannot, you get a custom 90 day profitability plan, normally <b>NZ$2,500</b>, completely free.</p><p style="grid-column:1/-1;font-size:11px;font-style:italic;color:var(--muted);margin-top:10px;line-height:1.45">*Provided you meet our requirements and criteria. The guarantee applies to qualifying businesses, confirmed together on the free deep dive.</p></div>
+      <div class="guar"><span class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span><h3>Our $11,500 NZD/month profit guarantee<sup style="font-size:.55em;color:var(--brand-2);font-weight:700">*</sup></h3><p>We will find at least <b>NZ$11,500 a month</b> in profit to put back in your pocket. If we cannot, you get a custom 90 day profitability plan, normally <b>NZ$2,500</b>, completely free.</p><p style="grid-area:note;font-size:11px;font-style:italic;color:var(--muted);margin-top:6px;line-height:1.45">*Provided you meet our requirements and criteria. The guarantee applies to qualifying businesses, confirmed together on the free deep dive.</p></div>
       <div class="stack-lbl">What you get, free</div>
       <div class="stack">
         <div class="row"><span class="d">Profit deep dive with a senior fractional CFO</span><span class="v">NZ$1,500</span><span class="free">FREE</span></div>
