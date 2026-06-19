@@ -448,7 +448,7 @@ svg{display:block}
     <h2>Book a fit check call to see if a deep dive makes sense for Dopamine Digital</h2>
     <p>On the call David will run through the report with you, customize it specifically for your business, and see whether a deep dive is the right fit.</p>
     <div class="risk">A completely free quick fit check with David, no pressure either way.</div>
-    <a class="btn" href="https://calendly.com/david-king-cfocentre/30min" target="_blank" rel="noopener"><span>Book your free fit check call</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a class="btn" href="https://calendly.com/david-king-cfocentre/30min" target="_blank" rel="noopener" onclick="try{ddBook()}catch(e){}"><span>Book your free fit check call</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     <div class="stars-row"><span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="stars-label">Trusted by 1,320 active clients worldwide</span></div>
     <div class="footnote">No obligation. If it is not a fit, you will know in 30 minutes.</div>
     <div class="proofbox">
@@ -470,7 +470,7 @@ svg{display:block}
 </div>
 
 <!-- Sticky mobile CTA bar (mobile only; button reuses the CTA .btn style) -->
-<div class="sticky-bar" id="stickyBar"><a class="btn" href="https://calendly.com/david-king-cfocentre/30min" target="_blank" rel="noopener"><span>Book your free fit check call</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+<div class="sticky-bar" id="stickyBar"><a class="btn" href="https://calendly.com/david-king-cfocentre/30min" target="_blank" rel="noopener" onclick="try{ddBook()}catch(e){}"><span>Book your free fit check call</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
 <script>
 (function(){
   var bar=document.getElementById('stickyBar'), cta=document.querySelector('.cta'), hero=document.querySelector('.hero');
@@ -498,8 +498,21 @@ svg{display:block}
      Set LEAD to the prospect company on a real scan; no "(sample)". -->
 <script>
 (function(){
+  var LEAD = "Dopamine Digital"; // REQUIRED: set to prospect company; no "(sample)" on real reports
+  function ddTrack(ev){
+    try{
+      var SLUG = "cfo-report-" + LEAD.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+      new Image().src = "https://docs.dopaminedigital.io/track?event=" + ev + "&report=1&client=cfo-centre&task=86ey03taf&test=f03d244f3ca120230b733a57aaad57b9&slug="
+        + encodeURIComponent(SLUG) + "&title=" + encodeURIComponent(LEAD) + "&t=" + Date.now();
+    }catch(e){}
+  }
+  // Book-a-Call click = the hottest signal. The Calendly buttons call this onclick.
+  window.ddBook = function(){ ddTrack("book"); };
+  // Page open — first open per browser per day.
   try{
-    new Image().src = "https://docs.dopaminedigital.io/track?event=opened&report=1&client=cfo-centre&task=86ey03taf&slug=jordan-e2e&title=" + encodeURIComponent("Dopamine Digital") + "&test=f03d244f3ca120230b733a57aaad57b9&t=" + Date.now();
+    var _ddOpenKey = 'dd_op_' + location.pathname + '_' + new Date().toDateString();
+    var _ddSeen = false; try{ _ddSeen = !!localStorage.getItem(_ddOpenKey); if(!_ddSeen) localStorage.setItem(_ddOpenKey,'1'); }catch(e){}
+    if(!_ddSeen){ ddTrack("opened"); }
   }catch(e){}
 })();
 </script>
