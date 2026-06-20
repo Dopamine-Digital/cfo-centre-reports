@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI Profit Leak Scan — Dopamine Digital</title>
+<style>
+  :root{ --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --brand:#6d28d9; --brandsoft:#f5f3ff; --good:#059669; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        color:var(--ink); background:#f8fafc; line-height:1.6; }
+  .wrap{ max-width:760px; margin:0 auto; padding:32px 20px 80px; }
+  .top{ display:flex; align-items:center; gap:14px; margin-bottom:8px; }
+  .top img{ width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--line); }
+  .eyebrow{ text-transform:uppercase; letter-spacing:.12em; font-size:12px; color:var(--brand); font-weight:700; }
+  h1{ font-size:30px; line-height:1.2; margin:14px 0 6px; }
+  h1 span{ color:var(--brand); }
+  .sub{ color:var(--muted); font-size:16px; margin-bottom:28px; }
+  .card{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; margin:18px 0;
+         box-shadow:0 1px 2px rgba(15,23,42,.04); }
+  .card h2{ font-size:18px; margin:0 0 10px; }
+  .stat{ display:flex; align-items:baseline; gap:10px; margin:6px 0; }
+  .stat b{ font-size:26px; color:var(--brand); }
+  ul{ margin:10px 0 0; padding-left:20px; }
+  li{ margin:7px 0; }
+  .pill{ display:inline-block; background:var(--brandsoft); color:var(--brand); font-weight:600;
+         font-size:13px; padding:4px 12px; border-radius:999px; }
+  .cta{ text-align:center; margin:34px 0 8px; }
+  .btn{ display:inline-block; background:var(--brand); color:#fff; text-decoration:none; font-weight:700;
+        font-size:17px; padding:15px 34px; border-radius:12px; }
+  .foot{ color:var(--muted); font-size:13px; text-align:center; margin-top:30px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <img src="../assets/david-king.png" alt="David King, CFO Centre">
+      <div>
+        <div class="eyebrow">CFO Centre · AI Profit Leak Scan</div>
+        <div style="font-weight:600">Prepared by David King</div>
+      </div>
+    </div>
+
+    <h1>What we found about <span>Dopamine Digital</span></h1>
+    <p class="sub">A quick outside-in read of where margin and cash are most likely leaking, and the three
+       things we would tighten first.</p>
+
+    <div class="card">
+      <span class="pill">Headline</span>
+      <div class="stat"><b>3</b> structural areas where profit is most likely slipping</div>
+      <p style="color:var(--muted); margin:6px 0 0">Based on what is publicly observable about how
+         Dopamine Digital operates. A 20 minute call turns this into specifics.</p>
+    </div>
+
+    <div class="card">
+      <h2>Where the leaks tend to hide</h2>
+      <ul>
+        <li><b>Pricing &amp; packaging</b> — recurring revenue priced on effort, not on the value delivered.</li>
+        <li><b>Delivery cost drift</b> — fulfilment hours creeping up per account without a margin check.</li>
+        <li><b>Cash timing</b> — the gap between when costs are paid and when revenue actually lands.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>The 3 we would tighten first for Dopamine Digital</h2>
+      <ul>
+        <li>Re-anchor the core offer to a value metric so price rises with the outcome.</li>
+        <li>Put a simple per-account margin line in front of delivery before scope expands.</li>
+        <li>Pull cash forward with billing timing, not discounts.</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <a class="btn" href="https://calendly.com/david-king-cfocentre/30min" onclick="ddBook()"
+         target="_blank" rel="noopener">Book your free 20-minute walkthrough</a>
+    </div>
+    <p class="foot">This scan was prepared privately for Dopamine Digital. Please do not share the link.</p>
+  </div>
+
+<!-- Open + intent tracking beacon. Pings docs.dopaminedigital.io/track cross-origin.
+     Carries task (the ClickUp card) + test token so the report-open follow-up loop resolves
+     this exact lead and bypasses internal-country suppression for the controlled E2E test. -->
+<script>
+(function(){
+  var TASK = "86ey0cnhb";
+  var TEST = "f03d244f3ca120230b733a57aaad57b9";
+  var SLUG = "dopamine-digital-scan-7k3m9q";
+  function ddTrack(ev){
+    try{
+      new Image().src = "https://docs.dopaminedigital.io/track?event=" + ev
+        + "&report=1&client=cfo-centre&task=" + TASK + "&test=" + TEST
+        + "&slug=" + encodeURIComponent(SLUG)
+        + "&title=" + encodeURIComponent("Dopamine Digital") + "&t=" + Date.now();
+    }catch(e){}
+  }
+  window.ddBook = function(){ ddTrack("book"); };
+  try{
+    var k = "dd_op_" + location.pathname + "_" + new Date().toDateString();
+    var seen = false;
+    try{ seen = !!localStorage.getItem(k); if(!seen) localStorage.setItem(k,"1"); }catch(e){}
+    if(!seen){ ddTrack("opened"); }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
