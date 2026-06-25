@@ -1132,5 +1132,19 @@
     "figure": "NZ$9,000–15,000",
     "type": "profit",
     "account_type": "prospect"
+  },
+  {
+    "slug": "unicef-aotearoa-susan-glasgow",
+    "url": "https://cfocentre.report/unicef-aotearoa-susan-glasgow/",
+    "company": "UNICEF Aotearoa",
+    "sector": "Children's charity",
+    "est_label": "Est. turnover",
+    "est_val": "$12M to $16M",
+    "region": "Wellington",
+    "date": "25 Jun 2026",
+    "headline_label": "Estimated monthly funding efficiency gap",
+    "figure": "NZ$8,000 / mo",
+    "type": "efficiency",
+    "account_type": "prospect"
   }
 ]
