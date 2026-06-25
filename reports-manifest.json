@@ -14,6 +14,20 @@
     "account_type": "prospect"
   },
   {
+    "slug": "vadacom-aaron-ridgway",
+    "url": "https://cfocentre.report/vadacom-aaron-ridgway/",
+    "company": "Vadacom",
+    "sector": "Cloud VoIP",
+    "est_label": "Est. turnover",
+    "est_val": "$4M to $8M",
+    "region": "Auckland",
+    "date": "25 June 2026",
+    "headline_label": "Estimated monthly profit leak",
+    "figure": "NZ$10,000 / mo",
+    "type": "profit",
+    "account_type": "prospect"
+  },
+  {
     "slug": "asian-family-services-24-june-2026",
     "url": "https://cfocentre.report/asian-family-services-24-june-2026/",
     "company": "Asian Family Services",
