@@ -14,6 +14,20 @@
     "account_type": "prospect"
   },
   {
+    "slug": "auckland-chamber-26-june-2026",
+    "url": "https://cfocentre.report/auckland-chamber-26-june-2026/",
+    "company": "Auckland Business Chamber",
+    "sector": "Business association",
+    "est_label": "Est. turnover",
+    "est_val": "$4M to $10M",
+    "region": "Auckland",
+    "date": "26 June 2026",
+    "headline_label": "Estimated monthly profit leak",
+    "figure": "NZ$11,500 / mo",
+    "type": "profit",
+    "account_type": "prospect"
+  },
+  {
     "slug": "motus-hydraulics-25-june-2026",
     "url": "https://cfocentre.report/motus-hydraulics-25-june-2026/",
     "company": "Motus Hydraulics",
