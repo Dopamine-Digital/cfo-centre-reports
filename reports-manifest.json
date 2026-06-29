@@ -9,7 +9,35 @@
     "region": "Auckland",
     "date": "29 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$14,500\u00a0/ mo",
+    "figure": "NZ$14,500 / mo",
+    "type": "profit",
+    "account_type": "prospect"
+  },
+  {
+    "slug": "groov-matt-krogstad",
+    "url": "https://cfocentre.report/groov-matt-krogstad/",
+    "company": "Groov",
+    "sector": "Health tech SaaS",
+    "est_label": "Est. turnover",
+    "est_val": "NZ$8M to $12M",
+    "region": "Auckland",
+    "date": "29 June 2026",
+    "headline_label": "Estimated monthly profit leak",
+    "figure": "NZ$14,500 / mo",
+    "type": "profit",
+    "account_type": "prospect"
+  },
+  {
+    "slug": "flying-fish-charlotte-evans",
+    "url": "https://cfocentre.report/flying-fish-charlotte-evans/",
+    "company": "Flying Fish",
+    "sector": "Film Production",
+    "est_label": "Est. turnover",
+    "est_val": "NZ$4M to $8M",
+    "region": "Auckland / Sydney",
+    "date": "29 June 2026",
+    "headline_label": "Estimated monthly profit leak",
+    "figure": "NZ$11,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -23,7 +51,7 @@
     "region": "Waikato",
     "date": "26 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$9,200\u201315,600",
+    "figure": "NZ$9,200–15,600",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -37,7 +65,7 @@
     "region": "Auckland",
     "date": "26 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$11,500\u00a0/ mo",
+    "figure": "NZ$11,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -51,7 +79,7 @@
     "region": "Auckland",
     "date": "26 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$11,500\u00a0/ mo",
+    "figure": "NZ$11,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -79,7 +107,7 @@
     "region": "Wellington",
     "date": "26 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$14,200\u201322,600",
+    "figure": "NZ$14,200–22,600",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -93,7 +121,7 @@
     "region": "Hastings, NZ",
     "date": "25 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$10,000\u00a0/ mo",
+    "figure": "NZ$10,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -107,7 +135,7 @@
     "region": "Auckland",
     "date": "25 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$10,000\u00a0/ mo",
+    "figure": "NZ$10,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -121,7 +149,7 @@
     "region": "Queenstown",
     "date": "25 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$10,000\u00a0/ mo",
+    "figure": "NZ$10,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -135,7 +163,7 @@
     "region": "Auckland / NZ-wide",
     "date": "24 June 2026",
     "headline_label": "Estimated monthly funding efficiency gap",
-    "figure": "NZ$8,600\u00a0/ mo",
+    "figure": "NZ$8,600 / mo",
     "type": "efficiency",
     "account_type": "prospect"
   },
@@ -149,7 +177,7 @@
     "region": "Wellington",
     "date": "24 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$6,000\u00a0/ mo",
+    "figure": "NZ$6,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -163,7 +191,7 @@
     "region": "Hamilton / Auckland",
     "date": "24 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$6,000\u00a0/ mo",
+    "figure": "NZ$6,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -177,7 +205,7 @@
     "region": "Auckland",
     "date": "24 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$3,000*\u00a0/ mo",
+    "figure": "NZ$3,000* / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -191,7 +219,7 @@
     "region": "Auckland/Tauranga",
     "date": "24 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,000\u00a0/ mo",
+    "figure": "NZ$7,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -205,21 +233,21 @@
     "region": "NZ & Pacific",
     "date": "24 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$15,000\u00a0/ mo",
+    "figure": "NZ$15,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
   {
     "slug": "ngati-ruanui-holdings-24-june-2026",
     "url": "https://cfocentre.report/ngati-ruanui-holdings-24-june-2026/",
-    "company": "Ng\u0101ti Ruanui Holdings",
+    "company": "Ngāti Ruanui Holdings",
     "sector": "Iwi holding co",
     "est_label": "Est. turnover",
     "est_val": "$3M to $6M",
     "region": "South Taranaki",
     "date": "24 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$6,500\u00a0/ mo",
+    "figure": "NZ$6,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -233,7 +261,7 @@
     "region": "Hamilton / Christchurch",
     "date": "24 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,000*\u00a0/ mo",
+    "figure": "NZ$7,000* / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -247,7 +275,7 @@
     "region": "Vaud, CH",
     "date": "24 June 2026",
     "headline_label": "Estimated monthly spend and efficiency leak",
-    "figure": "$8,000\u00a0/ mo",
+    "figure": "$8,000 / mo",
     "type": "efficiency",
     "account_type": "prospect"
   },
@@ -257,11 +285,11 @@
     "company": "Aotea Trade Training",
     "sector": "Trade training",
     "est_label": "Est. turnover",
-    "est_val": "NZ$3M\u2013$6M",
+    "est_val": "NZ$3M–$6M",
     "region": "Nationwide NZ",
     "date": "23 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$6,000\u20138,000\u00a0/ mo",
+    "figure": "NZ$6,000–8,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -275,7 +303,7 @@
     "region": "Auckland",
     "date": "23 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,000\u201312,000\u00a0/ mo",
+    "figure": "NZ$8,000–12,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -285,11 +313,11 @@
     "company": "Conferenz",
     "sector": "Events and training",
     "est_label": "Est. turnover",
-    "est_val": "NZ$5M\u2013$10M",
+    "est_val": "NZ$5M–$10M",
     "region": "Auckland",
     "date": "23 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$9,000\u201311,000\u00a0/ mo",
+    "figure": "NZ$9,000–11,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -299,11 +327,11 @@
     "company": "Inugo",
     "sector": "Parking technology",
     "est_label": "Est. turnover",
-    "est_val": "NZ$2M\u2013$5M",
+    "est_val": "NZ$2M–$5M",
     "region": "Auckland",
     "date": "23 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$12,000\u00a0/ mo",
+    "figure": "NZ$12,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -317,7 +345,7 @@
     "region": "Wellington",
     "date": "23 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,500\u00a0/ mo",
+    "figure": "NZ$7,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -331,7 +359,7 @@
     "region": "Northland",
     "date": "23 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,000\u00a0/ mo",
+    "figure": "NZ$8,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -341,11 +369,11 @@
     "company": "Oceanic Navigation Ltd",
     "sector": "Shipping agency",
     "est_label": "Est. turnover",
-    "est_val": "NZ$5M\u2013$7M",
+    "est_val": "NZ$5M–$7M",
     "region": "Auckland",
     "date": "23 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$6,000\u20138,000\u00a0/ mo",
+    "figure": "NZ$6,000–8,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -359,7 +387,7 @@
     "region": "Wellington",
     "date": "23 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$6,000\u00a0/ mo",
+    "figure": "NZ$6,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -373,7 +401,7 @@
     "region": "Auckland",
     "date": "23 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,000\u00a0/ mo",
+    "figure": "NZ$7,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -387,7 +415,7 @@
     "region": "Auckland",
     "date": "22 June 2026",
     "headline_label": "Estimated monthly spend leak",
-    "figure": "NZ$7,000\u00a0/ mo",
+    "figure": "NZ$7,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -401,7 +429,7 @@
     "region": "Auckland",
     "date": "22 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$3,500\u00a0/ mo",
+    "figure": "NZ$3,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -415,7 +443,7 @@
     "region": "Christchurch",
     "date": "22 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,000\u00a0/ mo",
+    "figure": "NZ$8,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -429,7 +457,7 @@
     "region": "Auckland",
     "date": "22 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,500\u00a0/ mo",
+    "figure": "NZ$8,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -443,7 +471,7 @@
     "region": "Lower Hutt",
     "date": "19 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$9,500\u00a0/ mo",
+    "figure": "NZ$9,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -457,7 +485,7 @@
     "region": "Wellington",
     "date": "19 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$9,000\u00a0/ mo",
+    "figure": "NZ$9,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -471,7 +499,7 @@
     "region": "Auckland",
     "date": "19 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,000\u00a0/ mo",
+    "figure": "NZ$8,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -485,7 +513,7 @@
     "region": "Brisbane",
     "date": "19 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$5,500\u00a0/ mo",
+    "figure": "NZ$5,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -499,7 +527,7 @@
     "region": "Auckland",
     "date": "19 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$4,500\u00a0/ mo",
+    "figure": "NZ$4,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -513,7 +541,7 @@
     "region": "Auckland",
     "date": "19 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$6,000\u00a0/ mo",
+    "figure": "NZ$6,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -527,7 +555,7 @@
     "region": "Auckland",
     "date": "19 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,500\u00a0/ mo",
+    "figure": "NZ$7,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -541,7 +569,7 @@
     "region": "Wellington",
     "date": "18 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$6,000\u00a0/ mo",
+    "figure": "NZ$6,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -555,7 +583,7 @@
     "region": "Nationwide NZ",
     "date": "18 June 2026",
     "headline_label": "Estimated monthly recoverable spend",
-    "figure": "NZ$8,500\u00a0/ mo",
+    "figure": "NZ$8,500 / mo",
     "type": "efficiency",
     "account_type": "prospect"
   },
@@ -569,7 +597,7 @@
     "region": "NZ-wide",
     "date": "18 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$11,500\u00a0/ mo",
+    "figure": "NZ$11,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -583,7 +611,7 @@
     "region": "Wellington",
     "date": "18 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,000\u00a0/ mo",
+    "figure": "NZ$8,000 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -597,7 +625,7 @@
     "region": "Bay of Plenty",
     "date": "18 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,500\u00a0/ mo",
+    "figure": "NZ$7,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -611,7 +639,7 @@
     "region": "Christchurch",
     "date": "18 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$10,400\u00a0/ mo",
+    "figure": "NZ$10,400 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -625,7 +653,7 @@
     "region": "Auckland",
     "date": "18 June 2026",
     "headline_label": "Estimated monthly surplus leak",
-    "figure": "NZ$11,800\u00a0/ mo",
+    "figure": "NZ$11,800 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -639,7 +667,7 @@
     "region": "Wellington / Auckland",
     "date": "17 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,200\u201312,400",
+    "figure": "NZ$7,200–12,400",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -653,7 +681,7 @@
     "region": "Kapiti Coast",
     "date": "17 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$11,500\u00a0/ mo",
+    "figure": "NZ$11,500 / mo",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -667,7 +695,7 @@
     "region": "Christchurch",
     "date": "16 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,400\u201311,800",
+    "figure": "NZ$7,400–11,800",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -681,7 +709,7 @@
     "region": "Auckland",
     "date": "15 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,400\u201313,800",
+    "figure": "NZ$8,400–13,800",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -695,7 +723,7 @@
     "region": "Hamilton/Raglan",
     "date": "15 June 2026",
     "headline_label": "Estimated monthly margin leak",
-    "figure": "NZ$6,400\u20139,800",
+    "figure": "NZ$6,400–9,800",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -709,7 +737,7 @@
     "region": "Northland",
     "date": "15 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,800\u201312,400",
+    "figure": "NZ$7,800–12,400",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -723,7 +751,7 @@
     "region": "Auckland",
     "date": "15 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,500\u201316,500",
+    "figure": "NZ$8,500–16,500",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -737,7 +765,7 @@
     "region": "Auckland",
     "date": "15 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,500\u201315,000",
+    "figure": "NZ$8,500–15,000",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -751,7 +779,7 @@
     "region": "Auckland",
     "date": "12 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$5,200\u20137,800",
+    "figure": "NZ$5,200–7,800",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -765,7 +793,7 @@
     "region": "Canterbury",
     "date": "12 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,000\u201313,000",
+    "figure": "NZ$8,000–13,000",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -779,7 +807,7 @@
     "region": "Auckland",
     "date": "11 June 2026",
     "headline_label": "Estimated monthly financial efficiency gap",
-    "figure": "NZ$5,500\u201311,000",
+    "figure": "NZ$5,500–11,000",
     "type": "efficiency",
     "account_type": "prospect"
   },
@@ -793,7 +821,7 @@
     "region": "Auckland",
     "date": "11 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,500\u201318,000",
+    "figure": "NZ$8,500–18,000",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -807,7 +835,7 @@
     "region": "Northland",
     "date": "11 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,200\u201314,500",
+    "figure": "NZ$8,200–14,500",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -821,7 +849,7 @@
     "region": "Wellington",
     "date": "11 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,200\u201314,300",
+    "figure": "NZ$8,200–14,300",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -835,7 +863,7 @@
     "region": "Auckland",
     "date": "10 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$5,000\u201320,000",
+    "figure": "NZ$5,000–20,000",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -849,7 +877,7 @@
     "region": "Auckland",
     "date": "10 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$5,000\u201311,000",
+    "figure": "NZ$5,000–11,000",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -863,7 +891,7 @@
     "region": "Auckland",
     "date": "10 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$5,000\u201320,000",
+    "figure": "NZ$5,000–20,000",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -877,7 +905,7 @@
     "region": "Auckland",
     "date": "10 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,000\u201315,000",
+    "figure": "NZ$7,000–15,000",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -891,7 +919,7 @@
     "region": "Wellington",
     "date": "10 June 2026",
     "headline_label": "Estimated monthly efficiency leak",
-    "figure": "NZ$5,000\u201320,000",
+    "figure": "NZ$5,000–20,000",
     "type": "efficiency",
     "account_type": "prospect"
   },
@@ -905,7 +933,7 @@
     "region": "Christchurch",
     "date": "10 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,000\u201316,500",
+    "figure": "NZ$8,000–16,500",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -919,7 +947,7 @@
     "region": "Auckland",
     "date": "10 June 2026",
     "headline_label": "Estimated monthly efficiency leak",
-    "figure": "NZ$6,000\u201320,000",
+    "figure": "NZ$6,000–20,000",
     "type": "efficiency",
     "account_type": "prospect"
   },
@@ -933,7 +961,7 @@
     "region": "Auckland",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,200\u201312,800",
+    "figure": "NZ$8,200–12,800",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -947,7 +975,7 @@
     "region": "Auckland",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,400\u201313,500",
+    "figure": "NZ$8,400–13,500",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -961,7 +989,7 @@
     "region": "New Zealand",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,000\u201312,800",
+    "figure": "NZ$8,000–12,800",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -975,7 +1003,7 @@
     "region": "Auckland",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$9,300\u201314,300",
+    "figure": "NZ$9,300–14,300",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -989,7 +1017,7 @@
     "region": "Auckland",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,800\u201312,600",
+    "figure": "NZ$7,800–12,600",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1003,7 +1031,7 @@
     "region": "Auckland",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$5,100\u20138,300",
+    "figure": "NZ$5,100–8,300",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1017,7 +1045,7 @@
     "region": "Christchurch",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,900\u201312,700",
+    "figure": "NZ$7,900–12,700",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1031,7 +1059,7 @@
     "region": "Wellington",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,100\u201311,500",
+    "figure": "NZ$7,100–11,500",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1045,7 +1073,7 @@
     "region": "Christchurch",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$6,000\u20139,600",
+    "figure": "NZ$6,000–9,600",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1059,7 +1087,7 @@
     "region": "Auckland",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$5,700\u20139,100",
+    "figure": "NZ$5,700–9,100",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1073,7 +1101,7 @@
     "region": "Bay of Plenty",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,300\u201311,800",
+    "figure": "NZ$7,300–11,800",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1087,7 +1115,7 @@
     "region": "Auckland",
     "date": "9 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$5,100\u20137,700",
+    "figure": "NZ$5,100–7,700",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1101,7 +1129,7 @@
     "region": "Auckland",
     "date": "4 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,000\u201312,500",
+    "figure": "NZ$7,000–12,500",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1115,7 +1143,7 @@
     "region": "Hamilton",
     "date": "4 June 2026",
     "headline_label": "Estimated monthly efficiency leak",
-    "figure": "NZ$3,500\u20137,000",
+    "figure": "NZ$3,500–7,000",
     "type": "efficiency",
     "account_type": "prospect"
   },
@@ -1129,7 +1157,7 @@
     "region": "New Zealand",
     "date": "4 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$18,000\u201330,000",
+    "figure": "NZ$18,000–30,000",
     "type": "profit",
     "account_type": "client"
   },
@@ -1143,7 +1171,7 @@
     "region": "Taupo",
     "date": "4 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$6,000\u201311,500",
+    "figure": "NZ$6,000–11,500",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1157,7 +1185,7 @@
     "region": "Auckland",
     "date": "3 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$8,000\u201313,500",
+    "figure": "NZ$8,000–13,500",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1171,7 +1199,7 @@
     "region": "Canterbury",
     "date": "3 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$7,000\u201312,000",
+    "figure": "NZ$7,000–12,000",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1185,7 +1213,7 @@
     "region": "Auckland/Melb",
     "date": "3 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$9,000\u201315,000",
+    "figure": "NZ$9,000–15,000",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1199,7 +1227,7 @@
     "region": "Canterbury",
     "date": "3 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$9,000\u201317,500",
+    "figure": "NZ$9,000–17,500",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1213,7 +1241,7 @@
     "region": "National",
     "date": "3 June 2026",
     "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$9,000\u201315,000",
+    "figure": "NZ$9,000–15,000",
     "type": "profit",
     "account_type": "prospect"
   },
@@ -1227,22 +1255,8 @@
     "region": "Wellington",
     "date": "25 Jun 2026",
     "headline_label": "Estimated monthly funding efficiency gap",
-    "figure": "NZ$8,000\u00a0/ mo",
+    "figure": "NZ$8,000 / mo",
     "type": "efficiency",
-    "account_type": "prospect"
-  },
-  {
-    "slug": "groov-matt-krogstad",
-    "url": "https://cfocentre.report/groov-matt-krogstad/",
-    "company": "Groov",
-    "sector": "Health tech SaaS",
-    "est_label": "Est. turnover",
-    "est_val": "NZ$8M to $12M",
-    "region": "Auckland",
-    "date": "29 June 2026",
-    "headline_label": "Estimated monthly profit leak",
-    "figure": "NZ$14,500\u00a0/ mo",
-    "type": "profit",
     "account_type": "prospect"
   }
 ]
