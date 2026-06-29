@@ -112,6 +112,20 @@
     "account_type": "prospect"
   },
   {
+    "slug": "quorum-collective-hannah-doney",
+    "url": "https://cfocentre.report/quorum-collective-hannah-doney/",
+    "company": "The Quorum Collective",
+    "sector": "Advisory & Governance",
+    "est_label": "Est. turnover",
+    "est_val": "",
+    "region": "Canterbury",
+    "date": "29 June 2026",
+    "headline_label": "Estimated monthly profit leak",
+    "figure": "NZ$4,200–7,100",
+    "type": "profit",
+    "account_type": "prospect"
+  },
+  {
     "slug": "ajv-global-26-june-2026",
     "url": "https://cfocentre.report/ajv-global-26-june-2026/",
     "company": "AJV Global",
