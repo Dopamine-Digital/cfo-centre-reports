@@ -70,6 +70,20 @@
     "account_type": "prospect"
   },
   {
+    "slug": "cycling-nz-chris-money",
+    "url": "https://cfocentre.report/cycling-nz-chris-money/",
+    "company": "Cycling New Zealand",
+    "sector": "National Sport Body",
+    "est_label": "Est. turnover",
+    "est_val": "",
+    "region": "Waikato",
+    "date": "29 June 2026",
+    "headline_label": "Estimated monthly efficiency leak",
+    "figure": "NZ$11,500–18,000",
+    "type": "efficiency",
+    "account_type": "prospect"
+  },
+  {
     "slug": "ajv-global-26-june-2026",
     "url": "https://cfocentre.report/ajv-global-26-june-2026/",
     "company": "AJV Global",
