@@ -1,5 +1,19 @@
 [
   {
+    "slug": "hugh-cotterill-direct-capital",
+    "url": "https://cfocentre.report/hugh-cotterill-direct-capital/",
+    "company": "Direct Capital",
+    "sector": "Private Equity",
+    "est_label": "Est. turnover",
+    "est_val": "",
+    "region": "New Zealand",
+    "date": "30 June 2026",
+    "headline_label": "Estimated monthly profit leak",
+    "figure": "NZ$14,200 to 21,500",
+    "type": "profit",
+    "account_type": "prospect"
+  },
+  {
     "slug": "groov-sir-john-kirwan",
     "url": "https://cfocentre.report/groov-sir-john-kirwan/",
     "company": "Groov",

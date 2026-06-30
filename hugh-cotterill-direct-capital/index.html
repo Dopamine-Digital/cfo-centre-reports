@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>AI Profit Leak Scan | The CFO Centre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#e6007e;          /* CFO Centre magenta */
+  --brand-2:#c4006a;
+  --brand-deep:#9c0054;
+  --brand-soft:#fdeaf3;
+  --ink:#221f2b;
+  --char:#211e2c;           /* charcoal for proof block */
+  --muted:#6c6a7a;
+  --line:#ece9f0;
+  --bg:#f6f4f8;
+  --card:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+svg{display:block}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none}}
+
+/* ===== Top bar ===== */
+.topbar{background:#fff;padding:14px 0;border-bottom:1px solid var(--line)}
+.topbar .row{max-width:900px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:14px}
+/* logo lockup recreating the cfo centre mark */
+.logo-tile{background:var(--brand);border-radius:11px;padding:7px 8px 6px;display:flex;flex-direction:column;align-items:center;width:56px;flex-shrink:0}
+.logo-tile .box{background:#fff;border-radius:3px;padding:3px 7px 2px;display:flex;flex-direction:column;align-items:flex-start;line-height:.8;width:100%}
+.logo-tile .l-the{color:var(--brand);font-size:9px;font-weight:800;letter-spacing:-.2px}
+.logo-tile .l-cfo{color:var(--brand);font-size:21px;font-weight:900;letter-spacing:-1.5px;line-height:.8;margin-top:1px}
+.logo-tile .l-centre{color:#fff;font-size:11px;font-weight:700;letter-spacing:.5px;margin-top:3px}
+.brand .rdiv{width:1px;height:26px;background:var(--line)}
+.brand .region{font-size:11px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--brand)}
+.ai-pill{display:inline-flex;align-items:center;gap:8px;background:var(--brand-soft);border:1px solid #f6c4de;color:var(--brand-2);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:7px 14px;border-radius:30px}
+.ai-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--brand)}
+
+/* ===== Hero ===== */
+.hero{background:
+   radial-gradient(circle at 88% 6%,rgba(255,255,255,.18),transparent 42%),
+   linear-gradient(150deg,#e6007e 0%,#bb0064 72%,#9c0054 100%);
+  color:#fff;padding:50px 0 128px;position:relative;overflow:hidden}
+.hero .grid-tex{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.22) 1px,transparent 1px);background-size:26px 26px;opacity:.14;pointer-events:none}
+.hero .row{max-width:900px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
+.kicker{font-size:11.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#ffd0e8}
+.hero h1{font-size:40px;font-weight:900;letter-spacing:-1.2px;line-height:1.05;margin:13px 0 14px;display:inline-block}
+.hero h1 .ul{box-shadow:inset 0 -10px 0 rgba(255,255,255,.18)}
+.hero .sub{font-size:16px;color:#fbe2ef;max-width:640px;line-height:1.6}
+.prepared{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.prepared .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:9px;padding:8px 13px;font-size:12.5px;color:#fff}
+.prepared .chip b{color:#fff;font-weight:700}
+
+/* ===== Headline card ===== */
+.headline-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 60px rgba(156,0,84,.13);padding:30px 34px;margin-top:-92px;position:relative;z-index:3}
+.hc-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.hc-num .lbl{font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.hc-num .big{font-size:50px;font-weight:900;color:var(--brand);letter-spacing:-2px;line-height:1.02;margin:7px 0 3px}
+.hc-num .big .cur{font-size:24px;vertical-align:super;font-weight:800;letter-spacing:0}
+.hc-num .sub{font-size:13px;color:var(--muted);max-width:340px}
+.hc-verify{display:flex;flex-direction:column;gap:11px;padding-top:4px}
+.hc-verify .v{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink);max-width:300px}
+.hc-verify .v svg{width:18px;height:18px;color:var(--brand);flex-shrink:0;margin-top:1px}
+
+/* breakdown bar */
+.breakdown{margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+.breakdown .bd-lbl{font-size:11px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);margin-bottom:11px}
+.bar{display:flex;height:15px;border-radius:8px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(156,0,84,.06);transform:scaleX(0);transform-origin:left;animation:grow 1s cubic-bezier(.4,0,.2,1) .25s forwards}
+@keyframes grow{to{transform:scaleX(1)}}
+.bar span{height:100%}
+.bar span:not(:last-child){border-right:2px solid #fff}
+.seg1{background:#9c0054}.seg2{background:#c4006a}.seg3{background:#e6007e}.seg4{background:#f25aa8}.seg5{background:#f9a8d0}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px}
+.legend .lg{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}
+.legend .sw{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+
+/* ===== Section ===== */
+.section{margin-top:50px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:7px}
+.section-head h2{font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.5px}
+.section-head .num{font-size:12.5px;font-weight:700;color:var(--brand-2);background:var(--brand-soft);padding:4px 11px;border-radius:20px}
+.section-intro{font-size:14.5px;color:var(--muted);max-width:690px;margin-bottom:24px}
+
+/* snapshot */
+.snapshot{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 28px;box-shadow:0 8px 26px rgba(156,0,84,.05)}
+.snapshot .scan-note{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--brand-2);font-weight:700;margin-bottom:18px}
+.snapshot .scan-note svg{width:16px;height:16px}
+.snapshot ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 30px}
+.snapshot li{font-size:14px;color:var(--ink);padding-left:22px;position:relative;line-height:1.5}
+.snapshot li svg{position:absolute;left:0;top:4px;width:14px;height:14px;color:var(--brand)}
+.snapshot li b{color:var(--ink);font-weight:700}
+
+/* leak cards */
+.leaks{display:grid;gap:15px}
+.leak{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 26px 22px 23px;display:grid;grid-template-columns:52px 1fr auto;gap:19px;align-items:center;position:relative;overflow:hidden;box-shadow:0 6px 20px rgba(156,0,84,.05);transition:box-shadow .22s,transform .22s,border-color .22s}
+.leak::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--brand),var(--brand-2));transform:scaleY(0);transform-origin:top;transition:transform .25s}
+.leak:hover{box-shadow:0 16px 38px rgba(156,0,84,.12);transform:translateY(-3px);border-color:#f6cfe2}
+.leak:hover::before{transform:scaleY(1)}
+.leak .ic{width:52px;height:52px;border-radius:13px;background:var(--brand-soft);display:flex;align-items:center;justify-content:center;color:var(--brand)}
+.leak .ic svg{width:25px;height:25px}
+.leak h3{font-size:16.5px;font-weight:800;color:var(--ink);margin-bottom:5px;letter-spacing:-.2px}
+.leak p{font-size:13.5px;color:var(--muted);line-height:1.55;max-width:470px}
+.leak .est{text-align:right;flex-shrink:0}
+.leak .est .amt{font-size:19px;font-weight:900;color:var(--ink);letter-spacing:-.5px;white-space:nowrap}
+.leak .est .lab{font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--brand-2);background:var(--brand-soft);padding:3px 9px;border-radius:20px;display:inline-block;margin-top:7px}
+
+/* proof */
+.proof{background:radial-gradient(circle at 90% 110%,rgba(230,0,126,.34),transparent 48%),linear-gradient(155deg,#2a2636,#1a1822);color:#fff;border-radius:18px;padding:36px 38px;position:relative;overflow:hidden}
+.proof .grid-tex{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:24px 24px;opacity:.07}
+.proof .tag{position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ff8cc6}
+.proof .story{position:relative;z-index:2;font-size:16.5px;line-height:1.6;color:#ece8f2;margin:15px 0 22px;max-width:670px}
+.proof .story b{color:#fff}
+.proof .arc{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.proof .step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:15px 16px}
+.proof .step .badge{width:24px;height:24px;border-radius:7px;background:var(--brand);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.proof .step .t{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#ff8cc6}
+.proof .step .d{font-size:13px;color:#e4dfee;margin-top:4px;line-height:1.45}
+.proof .quote{position:relative;z-index:2;font-size:19px;font-weight:700;color:#fff;border-left:3px solid var(--brand);padding-left:18px;line-height:1.45}
+.proof .quote span{display:block;font-size:12.5px;font-weight:500;color:#b9b2c6;margin-top:9px;letter-spacing:.3px}
+
+/* guarantee */
+.guarantee{background:var(--brand-soft);border:1px solid #f6c8e0;border-radius:16px;padding:24px 28px;display:flex;gap:19px;align-items:center;margin-top:18px}
+.guarantee .shield{width:48px;height:48px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand);flex-shrink:0;box-shadow:0 6px 16px rgba(230,0,126,.18)}
+.guarantee .shield svg{width:26px;height:26px}
+.guarantee p{font-size:15px;color:var(--ink);line-height:1.55}
+.guarantee p b{color:var(--brand-2);font-weight:800}
+
+/* CTA */
+.cta{text-align:center;margin-top:50px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:44px 30px;box-shadow:0 10px 30px rgba(156,0,84,.06)}
+.cta .who{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:18px}
+.cta .who .av{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(230,0,126,.28);position:relative;overflow:hidden}
+.cta .who .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.cta .who .wt{text-align:left;font-size:12.5px;color:var(--muted);line-height:1.3}
+.cta .who .wt b{display:block;color:var(--ink);font-size:14px;font-weight:800}
+.cta h2{font-size:27px;font-weight:900;color:var(--ink);letter-spacing:-.6px;margin-bottom:9px}
+.cta p{font-size:15px;color:var(--muted);max-width:540px;margin:0 auto 24px}
+.btn{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:800;font-size:15.5px;letter-spacing:.2px;padding:16px 36px;border-radius:12px;text-decoration:none;box-shadow:0 12px 30px rgba(230,0,126,.36);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(230,0,126,.46)}
+.btn svg{width:18px;height:18px}
+.cta .reassure{font-size:12.5px;color:var(--muted);margin-top:17px}
+
+/* sources */
+.sources{margin-top:32px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;box-shadow:0 4px 12px rgba(156,0,84,.03)}
+.sources .src-lbl{font-size:11px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.sources ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.sources li a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--brand-2);font-weight:600;text-decoration:none;background:var(--brand-soft);padding:6px 13px;border-radius:8px;border:1px solid #f6c4de;transition:background .15s}
+.sources li a:hover{background:#f6c4de}
+.sources li a svg{width:13px;height:13px;flex-shrink:0}
+
+/* footer */
+.foot{text-align:center;margin-top:42px;font-size:11.5px;color:#9a98a8;line-height:1.7;max-width:700px;margin-left:auto;margin-right:auto}
+.foot .logo-sm{font-weight:800;color:var(--brand);font-size:13px;letter-spacing:.3px}
+
+@media(max-width:720px){
+  .hc-top{gap:20px}
+  .hc-verify{padding-top:0}
+  .hero h1{font-size:30px}
+  .snapshot ul{grid-template-columns:1fr}
+  .proof .arc{grid-template-columns:1fr}
+  .leak{grid-template-columns:46px 1fr;gap:15px}
+  .leak .est{grid-column:1/-1;text-align:left;display:flex;align-items:center;gap:13px}
+  .leak .est .lab{margin-top:0}
+  .leak p{max-width:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<header class="topbar">
+  <div class="row">
+    <div class="brand">
+      <div class="logo-tile">
+        <div class="box"><span class="l-the">the</span><span class="l-cfo">cfo</span></div>
+        <span class="l-centre">centre</span>
+      </div>
+      <span class="rdiv"></span>
+      <span class="region">New Zealand</span>
+    </div>
+    <div class="ai-pill"><span class="dot"></span> AI Profit Leak Scan</div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="grid-tex"></div>
+  <div class="row">
+    <div class="kicker">Prepared for</div>
+    <h1><span class="ul">Direct Capital</span></h1>
+    <p class="sub">Our AI scanned 40+ public signals about your firm and benchmarked them against NZ private equity managers in your AUM band. Here is where firms like yours quietly lose margin before it reaches the bottom line.</p>
+    <div class="prepared">
+      <div class="chip">Sector: <b>Private Equity</b></div>
+      <div class="chip">Est. turnover band: <b>NZ$15M to $25M</b></div>
+      <div class="chip">Region: <b>New Zealand</b></div>
+      <div class="chip">Scan date: <b>30 June 2026</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- Headline card -->
+  <div class="headline-card">
+    <div class="hc-top">
+      <div class="hc-num">
+        <div class="lbl">Estimated monthly profit leak</div>
+        <div class="big"><span class="cur">NZ$</span>14,200 to 21,500</div>
+        <div class="sub">Modelled from sector benchmarks for PE managers with NZ$500M+ AUM. The exact figure is confirmed live on a free deep dive.</div>
+      </div>
+      <div class="hc-verify">
+        <div class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Built from public data, no access to your books required</div>
+        <div class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Benchmarked against NZ fund managers in your AUM band</div>
+        <div class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Verified line by line on the deep dive, or you owe nothing</div>
+      </div>
+    </div>
+    <div class="breakdown">
+      <div class="bd-lbl">Where the leak sits</div>
+      <div class="bar">
+        <span class="seg1" style="width:28%"></span>
+        <span class="seg2" style="width:24%"></span>
+        <span class="seg3" style="width:22%"></span>
+        <span class="seg4" style="width:15%"></span>
+        <span class="seg5" style="width:11%"></span>
+      </div>
+      <div class="legend">
+        <div class="lg"><span class="sw seg1"></span> Multi-entity tax structure</div>
+        <div class="lg"><span class="sw seg2"></span> Portfolio reporting overhead</div>
+        <div class="lg"><span class="sw seg3"></span> Carry and fee structure leakage</div>
+        <div class="lg"><span class="sw seg4"></span> Cross-border FX drag</div>
+        <div class="lg"><span class="sw seg5"></span> Working capital timing</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Snapshot -->
+  <div class="section">
+    <div class="section-head"><h2>What we found about you</h2></div>
+    <div class="snapshot">
+      <div class="scan-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> AI-read from your website, LinkedIn, NZ Companies Office, and fund announcements</div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>7 funds raised totalling NZ$2.2B+</b>, with Fund VII at $525M now deploying from April 2025</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>10+ active portfolio companies</b> across HVAC, apparel, real estate, cleaning products, and infrastructure</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>Multiple NZ company registrations</b> (Management Ltd, Partners Ltd, Ltd) creating multi-entity complexity</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>Cross-border investments</b> in both NZ and Australia, with portfolio companies operating in US and UK</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>Executive-owned firm</b>, so partner distributions and carried interest intertwine with firm economics</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>~26 staff managing $525M in active deployment</b>, a lean team relative to capital under management</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Leak map -->
+  <div class="section">
+    <div class="section-head"><h2>Your likely profit leaks</h2><span class="num">5 areas</span></div>
+    <p class="section-intro">Each area below is where PE managers your size most often lose money. Figures are benchmark estimates for your AUM band, confirmed against your actual numbers on the deep dive.</p>
+    <div class="leaks">
+
+      <div class="leak">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div>
+        <div>
+          <h3>Multi-entity tax structure leakage</h3>
+          <p>With at least three registered entities (Management Ltd #1815716, Partners Ltd #1034285, Ltd #6183516) plus fund vehicles and co-investment structures, intercompany flows and GST apportionment are prime areas for silent margin loss. PE firms with 5+ entities typically find 2 to 4% of management fee income lost to structural inefficiency.</p>
+        </div>
+        <div class="est"><div class="amt">NZ$4,000 to 6,000</div><div class="lab">Est / mo</div></div>
+      </div>
+
+      <div class="leak">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <h3>Portfolio reporting overhead</h3>
+          <p>Managing board-level reporting across 10+ portfolio companies (Wet &amp; Forget, AS Colour, TR Group, Active Refrigeration, Bayleys, Hiway Group, and more) while consolidating fund-level LP reporting for ACC, NZ Super Fund, and other institutional investors. The finance team carries manual reconciliation that a structured reporting layer would reduce significantly.</p>
+        </div>
+        <div class="est"><div class="amt">NZ$3,500 to 5,000</div><div class="lab">Est / mo</div></div>
+      </div>
+
+      <div class="leak">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div>
+          <h3>Carry and fee structure leakage</h3>
+          <p>Fund VII at $525M generates meaningful management fees. As fund sizes have grown from $68M to $525M over 30 years, the waterfall calculations, carry allocation across partners, and hurdle rate tracking become materially more complex. Misalignment between when fees are earned and when costs are incurred creates a drag most PE firms only catch at year end.</p>
+        </div>
+        <div class="est"><div class="amt">NZ$3,200 to 4,800</div><div class="lab">Est / mo</div></div>
+      </div>
+
+      <div class="leak">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+        <div>
+          <h3>Cross-border FX and compliance drag</h3>
+          <p>Portfolio companies like AS Colour (Melbourne distribution centre), Wet &amp; Forget (US, UK, AU operations), and Hiway Group (Australasian operations) create multi-currency exposure. Without a structured hedging and FX netting framework at the fund level, unmanaged currency movements erode returns quietly between reporting periods.</p>
+        </div>
+        <div class="est"><div class="amt">NZ$2,100 to 3,200</div><div class="lab">Est / mo</div></div>
+      </div>
+
+      <div class="leak">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div>
+          <h3>Working capital and capital call timing</h3>
+          <p>With Fund VII now deploying and older funds still active, the timing mismatch between capital calls from LPs, deployment into portfolio companies, and management fee collection creates cash flow gaps. For an executive-owned firm, these gaps often get bridged from partner capital at an implicit cost that is rarely measured.</p>
+        </div>
+        <div class="est"><div class="amt">NZ$1,400 to 2,500</div><div class="lab">Est / mo</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Proof -->
+  <div class="section">
+    <div class="proof">
+      <div class="grid-tex"></div>
+      <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><polyline points="20 6 9 17 4 12"/></svg> Proof, a real turnaround</div>
+      <p class="story">A client of ours, <b>Flow Autobody</b>, came to us going into administration. They had been loss making for <b>18 months</b> and were carrying tax debt. Our fractional CFO went in and found the same leaks we have flagged above.</p>
+      <div class="arc">
+        <div class="step"><div class="badge">1</div><div class="t">Week 2</div><div class="d">Found margins too low on certain jobs, and overhead needed to shift to a contractor model</div></div>
+        <div class="step"><div class="badge">2</div><div class="t">Week 6</div><div class="d">Business was turning a profit for the first time in over a year</div></div>
+        <div class="step"><div class="badge">3</div><div class="t">6 months</div><div class="d">Owner sold the business internally at a price every party was happy with</div></div>
+      </div>
+      <div class="quote">&ldquo;Twelve months later, the ROI on having a CFO was 10 times what he had invested.&rdquo;<span>Owner, Flow Autobody</span></div>
+    </div>
+
+    <div class="guarantee">
+      <div class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+      <p><b>The deep dive is free.</b> On it we will confirm at least <b>NZ$11,500 a month<sup>*</sup></b> in recoverable leaks. If we cannot, we build you a custom 90 day profitability plan, normally NZ$2,500, at no charge either way.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="who">
+      <div class="av"><img src="../assets/david-king.png" alt="David King"></div>
+      <div class="wt"><b>David King</b>CEO, The CFO Centre NZ</div>
+    </div>
+    <h2>Claim your free deep dive</h2>
+    <p>The deep dive is completely free. This quick fit check call with David just makes sure it is worth your time before we book it in, no pressure either way.</p>
+    <a class="btn" href="https://calendly.com/david-king-cfocentre/30min" target="_blank" rel="noopener">Book your fit check call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <div class="reassure">No obligation. If it is not a fit, you will know in 30 minutes.</div>
+  </div>
+
+  <!-- Sources -->
+  <div class="sources">
+    <div class="src-lbl">Sources used in this scan</div>
+    <ul>
+      <li><a href="https://www.directcapital.co.nz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Website</a></li>
+      <li><a href="https://www.linkedin.com/company/direct-capital-private-equity/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Company LinkedIn</a></li>
+      <li><a href="https://www.linkedin.com/in/hugh-cotterill-250109/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Hugh Cotterill LinkedIn</a></li>
+      <li><a href="https://app.companiesoffice.govt.nz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> NZ Companies Office</a></li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="foot">
+    <div class="logo-sm">The CFO Centre New Zealand</div>
+    The world's number one fractional CFO provider.<br>
+    This scan is an AI assisted analysis based on publicly available data and sector benchmarks. All figures are estimates and are confirmed on the deep dive. Prepared for the named recipient only.<br>
+    *Provided you meet our requirements and criteria.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var sel='.headline-card,.section-head,.snapshot,.leak,.proof,.guarantee,.cta';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(el){el.classList.add('reveal')});
+  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+
+<!-- Open-tracking beacon -->
+<script>
+(function(){
+  var LEAD = "Direct Capital";
+  var CLICKUP_TASK_ID = "86ey3tytt";
+  try{
+    var _ddOpenKey = 'dd_op_' + location.pathname + '_' + new Date().toDateString();
+    var _ddSeen = false; try{ _ddSeen = !!localStorage.getItem(_ddOpenKey); if(!_ddSeen) localStorage.setItem(_ddOpenKey,'1'); }catch(e){}
+    if(!_ddSeen){
+      new Image().src = "https://docs.dopaminedigital.io/track?event=opened&slug=profit-leak-scan&title="
+        + encodeURIComponent(LEAD) + "&task=" + encodeURIComponent(CLICKUP_TASK_ID) + "&t=" + Date.now();
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
