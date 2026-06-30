@@ -42,6 +42,20 @@
     "account_type": "prospect"
   },
   {
+    "slug": "michael-durie-marketing-association",
+    "url": "https://cfocentre.report/michael-durie-marketing-association/",
+    "company": "Marketing Association NZ",
+    "sector": "Industry Association",
+    "est_label": "Est. turnover",
+    "est_val": "",
+    "region": "New Zealand",
+    "date": "30 June 2026",
+    "headline_label": "Estimated monthly profit leak",
+    "figure": "NZ$12,200 to 18,500",
+    "type": "profit",
+    "account_type": "prospect"
+  },
+  {
     "slug": "groov-sir-john-kirwan",
     "url": "https://cfocentre.report/groov-sir-john-kirwan/",
     "company": "Groov",
